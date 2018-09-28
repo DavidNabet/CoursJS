@@ -122,7 +122,7 @@ console.log(auClick);
 
 let readBaliseA = document.querySelectorAll("#services a")[0];
 
-//Notre paragraphe originel
+//Sauvegarde du texte original
 const TEXTREAD = document.querySelectorAll("#services p")[0].innerHTML;
 
 readBaliseA.addEventListener("click", function() {
