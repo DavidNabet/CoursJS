@@ -14,7 +14,7 @@
 //stocke nos images dans un tableau
 let imgCarrousel = [
     "https://www.filepicker.io/api/file/eWNdrudOSSFzrLwrI9wU",
-    "https://blog.rh-flow.de/files/2015/03/oxid_responsive-960x360.jpg",
+    "https://blog.lesieur.name/media/images/upload/angular_js_2.jpg",
     "http://nayvii.com/wp-content/uploads/2018/07/form-design-inspiration-muzli-studio-1kpbkjanw-rgebwjbw-ui-best-practices-examples-element-in-html-ux-bootstrap-css-960x360.jpeg"
 ];
 
@@ -103,9 +103,9 @@ let imageBas = [
     "https://s17404.pcdn.co/studio/wp-content/uploads/2018/08/changelog-BlogImageTemplate_1400x400-july-290x180.png",
     "https://s17404.pcdn.co/studio/wp-content/uploads/2018/05/header_1200x600-b-8d5f80-290x180.png",
     "http://static.wixstatic.com/media/ce7ec0_6502fba5645049b6b867df63d0e7e8c4.png"
-];
+]; //Tableau des images à afficher
 
-
+//Récupération de toutes nos balises img se trouvant dans l'id services
 let auClick = document.querySelectorAll("#services .one_third img");
 
 
@@ -116,3 +116,29 @@ for (let i = 0; i < auClick.length; i++) {
     });
 }
 console.log(auClick);
+
+
+/************************* Read More **************************/
+
+let readBaliseA = document.querySelectorAll("#services a")[0];
+
+//Notre paragraphe originel
+const TEXTREAD = document.querySelectorAll("#services p")[0].innerHTML;
+
+readBaliseA.addEventListener("click", function() {
+    event.preventDefault(); //Supprime l'evenement par default
+    let paragrapheRead = document.querySelectorAll("#services figcaption p")[0];
+    if (readBaliseA.innerHTML == "Read More »") {
+        paragrapheRead.textContent += " Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.";
+        readBaliseA.innerHTML = "Read Less &raquo;";
+
+    } else {
+        paragrapheRead.innerHTML = TEXTREAD; //Revenir au texte original
+        readBaliseA.innerHTML = "Read More »";
+
+
+    }
+
+    console.log("sa marche");
+
+})
